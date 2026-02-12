@@ -1,0 +1,606 @@
+/* ================= GLOBAL ================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section{
+  scroll-margin-top:110px;
+}
+body {
+  background: #f4f6f9;
+  color: #333;
+  animation: fadeBody 0.6s ease;
+}
+
+@keyframes fadeBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  background: rgba(15, 32, 39, 0.85);
+  backdrop-filter: blur(10px);
+
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo img {
+  width: 80px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffd166;
+}
+
+
+/* ================= CHAIRMAN ================= */
+
+.chairman-box {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.chairman-box img {
+  width: 160px;
+  border-radius: 50%;
+  border: 5px solid #2c5364;
+}
+
+.chairman h4 {
+  margin-top: 15px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 80vh;
+  background:
+    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+    url("../images/college-building.png") center / cover no-repeat;
+}
+
+.hero-overlay {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+}
+
+.hero-btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 30px;
+  background: #fbc531;
+  border-radius: 30px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+/* ================= SCHOLARSHIP ================= */
+
+.scholarship-badge {
+  margin: 20px auto;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #ffd700, #ffb703);
+  border-radius: 30px;
+  font-weight: 700;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+
+/* ================= COUNTERS ================= */
+
+.counters {
+  background: linear-gradient(90deg, #203a43, #2c5364);
+  color: #fff;
+}
+
+.counter-box {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.counter h2 {
+  color: #fbc531;
+  font-size: 42px;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section {
+  padding: 60px 20px;
+}
+
+.section.alt {
+  background: #eef2f7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+/* ================= CARDS ================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+
+/* Faculty */
+
+.faculty-card {
+  text-align: center;
+}
+
+.faculty-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #2c5364;
+  box-shadow: 0 0 0 6px rgba(44,83,100,.15);
+  transition: 0.4s;
+}
+
+.faculty-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 8px rgba(44,83,100,.25);
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: #203a43;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.note {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+
+/* ================= BANNER ================= */
+
+.banner-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.banner-popup img {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.banner-popup span {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* ================= COMMITTEE ================= */
+
+.committee-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.committee-tab {
+  padding: 10px 20px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.committee-tab.active {
+  background: #0a3d62;
+  color: white;
+}
+
+.committee-content {
+  display: none;
+}
+
+.committee-content.active {
+  display: block;
+}
+
+.section:has(.committee-tabs) {
+  padding-top: 25px;
+  padding-bottom: 5px;
+}
+
+
+/* ================= COURSE ================= */
+
+.course-section {
+  background: linear-gradient(135deg, #f5f7fa, #e4edf5);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #0a3d62;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+.course-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.course-card {
+  background: #fff;
+  padding: 35px 25px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.08);
+  text-align: center;
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0,0,0,.15);
+}
+
+.course-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.course-card h3 {
+  margin-bottom: 15px;
+  color: #0a3d62;
+}
+
+.course-card ul {
+  list-style: none;
+}
+
+.course-card ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.course-card ul li:last-child {
+  border-bottom: none;
+}
+
+
+/* Highlight */
+
+.course-card.highlight {
+  background: linear-gradient(135deg, #0a3d62, #1e5f8a);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.course-card.highlight h3 {
+  color: #fff;
+}
+
+.course-card.highlight ul li {
+  border-color: rgba(255,255,255,.2);
+}
+
+
+/* ================= CTA ================= */
+
+.cta {
+  background: linear-gradient(135deg, #0a3d62, #1e5f8a);
+  color: #fff;
+  text-align: center;
+  border-radius: 25px;
+  padding: 60px 20px;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 35px;
+  border-radius: 40px;
+  background: #ffd166;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+/* ================= HIGHLIGHTS POPUP ================= */
+
+.highlights-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.highlights-box {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 18px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  animation: popupFade 0.4s ease;
+}
+
+.highlights-box h2 {
+  color: #0a3d62;
+  margin-bottom: 15px;
+}
+
+.highlights-box p {
+  color: #555;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.highlights-box span {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ================= LOADER ================= */
+
+#pageLoader {
+  position: fixed;
+  inset: 0;
+  background: #0f2027;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255,255,255,.2);
+  border-top: 6px solid #ffd166;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .nav-links a {
+    margin: 0 12px;
+  }
+
+  .chairman-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-content h2 {
+    font-size: 24px;
+  }
+
+  .counter-box {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .nav-logo img {
+    width: 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero-btn {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+
+  .section {
+    padding: 45px 15px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+
+/* ================= WHY US ================= */
+
+.why-us {
+  background: #fff;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.why-card {
+  background: linear-gradient(180deg, #fff, #f6f9fc);
+  padding: 32px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.4s;
+  box-shadow: 0 12px 30px rgba(0,0,0,.06);
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+}
+
+.why-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+
+/* ================= GLOBAL IMAGE ================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ================= ADMISSION ================= */ .admission-hero { position: relative; padding: 120px 20px; display: flex; justify-content: center; align-items: center; overflow: hidden; } /* Background Image */ .admission-bg { position: absolute; inset: 0; background: url("../images/college-building.png") center/cover no-repeat; transform: scale(1.1); } /* Dark Overlay */ .admission-overlay { position: absolute; inset: 0; background: linear-gradient( 135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.6), rgba(0,0,0,0.85) ); } /* Glass Card */ .admission-card { position: relative; max-width: 750px; width: 100%; padding: 60px 40px; border-radius: 25px; text-align: center; backdrop-filter: blur(18px); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 25px 60px rgba(0,0,0,0.5); animation: floatCard 4s ease-in-out infinite; } /* Floating Animation */ @keyframes floatCard { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } } .admission-card h2 { color: #fff; font-size: 36px; margin-bottom: 20px; } .admission-tag { color: #ddd; font-size: 18px; margin-bottom: 25px; } .admission-numbers { color: #ffd369; font-size: 22px; font-weight: 700; margin-bottom: 35px; } /* Buttons */ .admission-actions { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+
+.cta-btn { padding: 16px 30px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: 0.4s ease; } .whatsapp { background: #25D366; color: white; } .call { background: linear-gradient(45deg, #ff512f, #dd2476); color: white; } .cta-btn:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
