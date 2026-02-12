@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="society-icon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guru Harkrishan Rai Educational Society | Fazilka</title>
+  <meta name="description" content="Guru Harkrishan Rai Educational Society (Regd.), Fazilka – Working in Education, Skill Development, Health and Social Welfare since 2001." />
+  <style>
+    :root{
+      --primary:#0b3c5d;
+      --secondary:#f4f7fb;
+      --accent:#e0a800;
+      --text:#333;
+    }
+    body{margin:0;font-family:'Segoe UI',Arial,sans-serif;color:var(--text);line-height:1.7;background:#fff;padding-top: 100px;}
+    header{background:var(--primary);color:#fff}
+    .container{width:90%;max-width:1200px;margin:auto}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+    nav a{color:#fff;text-decoration:none;font-weight:600}
+    .hero{background:linear-gradient(rgba(11,60,93,.85),rgba(11,60,93,.85)),url('campus-main.jpg') center/cover no-repeat;color:#fff;padding:90px 0;text-align:center}
+    .hero h1{font-size:42px;margin-bottom:10px}
+    .hero p{font-size:18px;max-width:900px;margin:auto}
+    .btn{display:inline-block;margin-top:25px;padding:12px 28px;background:var(--accent);color:#000;font-weight:700;border-radius:30px;text-decoration:none}
+    .section{padding:70px 0;scroll-margin-top: 50px;}
+    .section.alt{background:var(--secondary)}
+    .section h2{text-align:center;color:var(--primary);margin-bottom:40px;font-size:32px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+    .card{background:#fff;border-radius:14px;padding:25px;box-shadow:0 10px 25px rgba(0,0,0,.08);transition:.3s}
+    .card:hover{transform:translateY(-6px)}
+    .card h3{margin-top:0;color:var(--primary)}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center}
+    .stat{background:#fff;padding:30px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+    .stat h3{font-size:36px;color:var(--primary);margin:0}
+    footer{background:var(--primary);color:#fff;padding:15px 0;text-align:center}
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #f4f7fb;
+  padding: 15px 0;
+}
+
+.slides {
+  display: flex;
+flex-wrap: nowrap;
+  gap: 20px;
+width: calc(250px * 10 + 20px * 10);
+  animation: scroll 40s linear infinite;
+}
+
+.slides img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.slides img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* 50% of total slides width */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slides img { width: 180px; height: 140px; }
+}
+
+@media (max-width: 480px) {
+  .slides img { width: 140px; height: 100px; }
+}
+header {
+  position: fixed; /* fix the header at top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* above all content */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* optional shadow for premium look */
+}
+
+.institution-card{
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+}
+
+.institution-card::after{
+  content:"View Details";
+  position:absolute;
+  inset:0;
+  background:rgba(11,60,93,0.85);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  font-weight:600;
+  opacity:0;
+  transition:.3s;
+}
+
+.institution-card:hover::after{
+  opacity:1;
+}
+
+.award-card{
+  border-left:5px solid var(--accent);
+  transition:.3s;
+}
+.award-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+.award-icon{
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0; /* reduce padding to balance height */
+}
+
+header nav .container div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.main-logo {
+  height: 110px; /* slightly smaller than previous 120px for balance */
+ margin-top: -18px;       /* upar overflow */
+  margin-bottom: -24px; 
+  width: auto;
+
+  transition: transform 0.3s;
+}
+
+.main-logo:hover {
+  transform: scale(1.2); /* subtle hover effect */
+}
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:60px;
+  height:60px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  z-index:999;
+}
+
+.whatsapp-float img{
+  width:34px;
+  height:34px;
+}
+
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-logo {
+    height: 75px;
+    margin-top: 0;
+    margin-bottom: 0;
+    transform: none !important;
+  }
+
+  body {
+    padding-top: 130px; /* header space fix */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+
+  .section h2 {
+    font-size: 26px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p,
+  .card li {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stat h3 {
+    font-size: 30px;
+  }
+
+  .stat p {
+    font-size: 14px;
+  }
+}
+
+footer p {
+  padding: 0 10px;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    bottom: 18px;
+    right: 18px;
+  }
+
+  .whatsapp-float img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+
+
+  </style>
+</head>
+<a href="https://wa.me/919815448848?text=Hello%20Guru%20Harkrishan%20Rai%20Educational%20Society,%20I%20would%20like%20to%20know%20more%20about%20you."
+   target="_blank"
+   class="whatsapp-float"
+   aria-label="Chat on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="logo.png" alt="Guru Harkrishan Rai Educational Society Logo" class="main-logo" />
+        <h2>GHR Educational Society</h2>
+      </div>
+      <ul>
+        <li><a href="#about">ℹ️ About</a></li>
+        <li><a href="#activities">🎯 Activities</a></li>
+        <li><a href="#awards">🏆 Awards</a></li>
+        <li><a href="#team">👥 Team</a></li>
+        <li><a href="#contact">📞 Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Guru Harkrishan Rai Educational Society, Fazilka</h1>
+    <p>A leading non-profit organisation established in 2001, dedicated to education, vocational skilling and social development across Punjab.</p>
+    <a href="#institutions" class="btn">Explore Our Institutions</a>
+  </div>
+</section>
+<section class="section alt">
+<div class="container">
+<h2>Campus & Activities</h2>
+<div class="slider">
+  <div class="slides">
+    <!-- Original 10 images -->
+    <img src="maingate.png" alt="Main Gate"/>
+    <img src="campus.jpg" alt="Campus View"/>
+    <img src="campus2.jpg" alt="Classroom"/>
+    <img src="campus3.jpg" alt="Library"/>
+    <img src="campus4.png" alt="Labs"/>
+    <img src="block2.png" alt="Block 2"/>
+    <img src="block3-1.jpg" alt="Block 3-1"/>
+    <img src="ground1.jpg" alt="Sports Ground"/>
+    <img src="ground2.jpg" alt="Garden"/>
+    <!-- Duplicate 10 images for smooth infinite scroll -->
+    <img src="maingate.png" alt="Main Gate"/>
+    <img src="campus.jpg" alt="Campus View"/>
+    <img src="campus2.jpg" alt="Classroom"/>
+    <img src="campus3.jpg" alt="Library"/>
+    <img src="campus4.png" alt="Labs"/>
+    <img src="block2.png" alt="Block 2"/>
+    <img src="block3-1.jpg" alt="Block 3-1"/>
+    <img src="ground1.jpg" alt="Sports Ground"/>
+    <img src="ground2.jpg" alt="Garden"/>
+  </div>
+</div>
+<div style="text-align:center; margin-top:25px;">
+      <a href="gallery.html" class="btn">📸 View Full Gallery</a>
+    </div>
+</div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <h2>About the Society</h2>
+
+    <p style="font-size:18px; max-width:950px; margin:auto; text-align:center;">
+      <strong>Guru Harkrishan Rai Educational Society (Regd.), Fazilka</strong> is a
+      registered non-profit organisation established in <strong>2001</strong>
+      under the <strong>Societies Registration Act, 1860</strong>.
+      The Society has been consistently working in the fields of
+      education, skill development, healthcare support and social welfare
+      with a vision to empower youth and strengthen communities.
+    </p>
+
+    <div class="cards" style="margin-top:50px;">
+
+      <div class="card">
+        <h3>🏛️ Our Background</h3>
+        <p>
+          With more than two decades of experience, the Society has successfully
+          established and managed multiple educational institutions, ITI centres
+          and skill development facilities, delivering quality training through
+          structured academic and vocational programs.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎓 Our Focus Areas</h3>
+        <p>
+          The Society focuses on formal education, vocational training,
+          industry-relevant skill development, healthcare support training
+          and capacity-building programs designed to enhance employability
+          and self-reliance.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🛠️ Training Approach</h3>
+        <p>
+          Training delivery is based on a balanced approach combining classroom
+          learning, practical exposure, lab-based sessions, assessments
+          and recognized certifications aligned with national standards.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🤝 Social Impact</h3>
+        <p>
+          Beyond education, the Society actively engages in community development,
+          awareness programs, women empowerment, youth engagement and
+          socially responsible initiatives aimed at inclusive and sustainable growth.
+        </p>
+      </div>
+
+    </div>
+
+    <p style="margin-top:45px; font-size:17px; max-width:950px; margin-left:auto; margin-right:auto; text-align:center;">
+      Through strong governance, experienced faculty, institutional infrastructure
+      and ethical practices, the Society continues to contribute towards building
+      a skilled, responsible and socially empowered society.
+    </p>
+
+  </div>
+</section>
+
+
+<section id="institutions" class="section alt">
+  <div class="container">
+    <h2>🏫 Our Institutions & Centres</h2>
+
+    <p style="text-align:center; max-width:900px; margin:auto; font-size:18px;">
+      Our Society operates and manages multiple educational institutions and
+      skill development centres dedicated to academic excellence,
+      vocational training and social empowerment.
+    </p>
+
+    <div class="cards" style="margin-top:45px;">
+
+	<div class="card institution-card"  onclick="window.location.href='technical-college.html'">
+  <h3>🎓 Guru Harkrishan Technical College, Fazilka</h3>
+  <p>
+    Undergraduate and professional programmes focused on
+    computer science, technology, skill-oriented education
+    and career development.
+  </p>
+</div>
+      <div class="card institution-card" onclick="window.open('https://ghiti.in','_blank')">
+        <h3>🎓 Guru Harkrishan ITI</h3>
+        <p>
+          NCVT / SCVT aligned technical and vocational trades with
+          strong practical exposure and industry relevance.
+        </p>
+      </div>
+
+      <div class="card institution-card" onclick="comingSoon()">
+        <h3>💊 LMB College of Ayurvedic Pharmacy</h3>
+        <p>
+          Professional education in ayurvedic pharmacy and
+          healthcare-oriented disciplines.
+        </p>
+      </div>
+
+      <div class="card institution-card" onclick="comingSoon()">
+        <h3>🛠️ Skill Development Training Centres</h3>
+        <p>
+          Government-sponsored and industry-linked skill
+          development programs for youth empowerment.
+        </p>
+      </div>
+
+      <div class="card institution-card" onclick="comingSoon()">
+        <h3>🤝 Smt. Bimla Devi Bhusri Charitable Institute</h3>
+        <p>
+          Community welfare, awareness programs and
+          social development initiatives.
+        </p>
+      </div>
+
+      <div class="card institution-card" onclick="comingSoon()">
+        <h3>🌐 Global Professional Institute, Fazilka</h3>
+        <p>
+          Career-oriented professional training focused on
+          employability and entrepreneurship.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="activities" class="section alt">
+  <div class="container">
+    <h2>🎯 Programs & Core Training Areas</h2>
+
+    <!-- Programs -->
+    <div style="text-align:center; max-width:900px; margin:auto;">
+      <p style="font-size:18px;">
+        We successfully implement <strong>Government & Institutional Skill Development Programs</strong>
+        aligned with national missions and industry demand.
+      </p>
+    </div>
+
+    <div class="cards" style="margin-top:40px;">
+      <div class="card">
+        <h3>🏛️ Government Skill Programs</h3>
+        <ul>
+          <li>PMKVY 2.0, 3.0 & 4.0 (Skill Hub)</li>
+          <li>PM-DAKSH</li>
+          <li>DAY-NULM</li>
+          <li>BADP</li>
+          <li>PM-06 Assistance to NGOs</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🏫 Institutional Training</h3>
+        <ul>
+          <li>ITI Level Technical Trades</li>
+          <li>Vocational & Job-Oriented Courses</li>
+          <li>Industry-linked Practical Training</li>
+          <li>Assessment & Certification</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Core Training Areas -->
+    <h3 style="text-align:center; margin-top:70px; color:var(--primary);">
+      💡 Core Training Areas
+    </h3>
+
+   <div class="cards" style="margin-top:35px;">
+
+  <div class="card">
+    <h3>💄 Beauty & Wellness</h3>
+    <p>Professional beauty, grooming and wellness programs with certification.</p>
+  </div>
+
+  <div class="card">
+    <h3>👗 Fashion Designing & Tailoring</h3>
+    <p>Garment designing, tailoring skills and self-employment oriented training.</p>
+  </div>
+
+  <div class="card">
+    <h3>🧵 Art, Craft & Phulkari</h3>
+    <p>Traditional Phulkari, handicrafts, art & craft training promoting cultural skills and livelihoods.</p>
+  </div>
+
+  <div class="card">
+    <h3>⚡ Electrical & Technician Trades</h3>
+    <p>Hands-on electrical, wiring, maintenance and technician-level skills.</p>
+  </div>
+
+  <div class="card">
+    <h3>☀️ Solar Energy & Green Trades</h3>
+    <p>Solar panel installation, maintenance and renewable energy skill programs.</p>
+  </div>
+
+  <div class="card">
+    <h3>🧰 Welding & Industrial Skills</h3>
+    <p>Industrial welding, fabrication and manufacturing-related skills.</p>
+  </div>
+
+  <div class="card">
+    <h3>🧪 Lab Technician & Healthcare Support</h3>
+    <p>Medical lab assistance and healthcare support training programs.</p>
+  </div>
+
+  <div class="card">
+    <h3>💻 Computer & Digital Courses</h3>
+    <p>Basic computer skills, office applications, data entry and digital literacy.</p>
+  </div>
+
+  <div class="card">
+    <h3>🧾 Receptionist & Administrative Skills</h3>
+    <p>Front-office management, communication and office administration skills.</p>
+  </div>
+
+</div>
+<h3 style="text-align:center; margin-top:70px; color:var(--primary);">
+  🌍 Social Welfare & Community Outreach
+</h3>
+
+<p style="text-align:center; max-width:900px; margin:auto; font-size:17px;">
+  Along with education and skill development, the Society actively undertakes
+  social welfare initiatives aimed at promoting health, awareness,
+  environmental responsibility and community well-being.
+</p>
+
+<div class="cards" style="margin-top:40px;">
+
+  <div class="card">
+    <h3>🚫 Drug De-addiction & Awareness Camps</h3>
+    <p>
+      Awareness camps and counselling sessions to educate youth and communities
+      about the harmful effects of drug abuse and to promote a drug-free society.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>🩸 Blood Donation Camps</h3>
+    <p>
+      Regular blood donation camps organised in collaboration with hospitals
+      and social organisations to support emergency healthcare needs.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>🌳 Tree Plantation & Environment Drives</h3>
+    <p>
+      Tree plantation drives and environmental awareness programs promoting
+      green practices and ecological responsibility.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>🤝 Community Welfare Initiatives</h3>
+    <p>
+      Social outreach activities including health awareness, cleanliness drives,
+      women empowerment programs and support for underprivileged sections.
+    </p>
+  </div>
+
+</div>
+
+  </div>
+</section>
+
+
+<section id="commitment" class="section">
+  <div class="container">
+    <h2>🤝 Our Commitment</h2>
+
+    <p style="text-align:center; max-width:900px; margin:auto; font-size:18px;">
+      We are committed to delivering quality education, skill development and
+      social impact through structured training, ethical practices and learner-centric approaches.
+    </p>
+
+    <div class="cards" style="margin-top:45px;">
+      <div class="card">
+        <h3>🎓 Quality Education & Training</h3>
+        <p>Delivering standardized, outcome-oriented education and skill training
+           aligned with industry and societal needs.</p>
+      </div>
+
+      <div class="card">
+        <h3>🧪 Practical & Hands-on Learning</h3>
+        <p>Strong focus on lab work, workshops and real-world exposure to enhance
+           employability and confidence.</p>
+      </div>
+
+      <div class="card">
+        <h3>📜 Assessment & Certification</h3>
+        <p>Transparent evaluation systems with recognized certification to ensure
+           credibility and skill validation.</p>
+      </div>
+
+      <div class="card">
+        <h3>💼 Career & Livelihood Support</h3>
+        <p>Career guidance, placement assistance and self-employment support for
+           sustainable livelihoods.</p>
+      </div>
+
+      <div class="card">
+        <h3>📊 Monitoring & Continuous Improvement</h3>
+        <p>Regular monitoring, feedback and process improvement to maintain quality
+           and training effectiveness.</p>
+      </div>
+
+      <div class="card">
+        <h3>🌱 Social Responsibility & Community Upliftment</h3>
+        <p>Working towards inclusive growth, awareness and skill empowerment for
+           long-term social development.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards" class="section" style="background:#ffffff;">
+  <div class="container">
+    <h2>🏆 Awards & Achievements</h2>
+
+    <p style="text-align:center; max-width:900px; margin:auto; font-size:18px;">
+      Over the years, the Society has received recognition and appreciation
+      for its contribution towards education, skill development and
+      social welfare initiatives.
+    </p>
+
+    <div class="cards" style="margin-top:50px;">
+
+      <div class="card award-card">
+        <div class="award-icon">🏅</div>
+        <h3>Excellence in Skill Development</h3>
+        <p>
+          Recognized for successful implementation and execution of
+          skill development and vocational training programs.
+        </p>
+      </div>
+
+      <div class="card award-card">
+        <div class="award-icon">🏅</div>
+        <h3>Government & Agency Appreciation</h3>
+        <p>
+          Appreciation received from Government departments and
+          partner agencies for effective program delivery.
+        </p>
+      </div>
+
+      <div class="card award-card">
+        <div class="award-icon">🏅</div>
+        <h3>Contribution to Education</h3>
+        <p>
+          Acknowledged for long-standing contribution to education,
+          technical training and institutional development.
+        </p>
+      </div>
+
+      <div class="card award-card">
+        <div class="award-icon">🏅</div>
+        <h3>Social Welfare & Community Service</h3>
+        <p>
+          Recognition for initiatives focused on community upliftment,
+          awareness programs and inclusive social development.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="team" class="section" style="background:#f9fafb;">
+  <div class="container">
+    <h2>👥 Governing Body</h2>
+    <div class="cards">
+      <div class="card"><strong>Er. Rakesh Bhusri</strong><br/>Chairman</div>
+      <div class="card"><strong>Er. Aseem Bhusri</strong><br/>General Secretary</div>
+<div class="card"><strong>Er. Arushi</strong><br/>Executive Member</div>
+      <div class="card"><strong>Mrs. Parkash Devi</strong><br/>Treasurer</div>
+      <div class="card"><strong>Mr. Dipesh Kumar</strong><br/>Administrative Staff</div>
+<div class="card"><strong>Miss Preeti</strong><br/>Administrative Staff</div>
+<div class="card"><strong>Er. Neeraj Sharma</strong><br/>Administrative Staff</div>
+      <div class="card"><strong>Mr. Didar Singh</strong><br/>Administrative Staff</div>
+<div class="card"><strong>Mr. Gaurav Kubba</strong><br/>Administrative Staff</div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" style="background:linear-gradient(135deg,#f4f7fb,#ffffff);">
+  <div class="container">
+    <h2>📊 Impact at a Glance</h2>
+
+    <p style="text-align:center; max-width:850px; margin:auto; font-size:18px;">
+      A snapshot of our journey, growth and contribution towards education,
+      skill development and community empowerment.
+    </p>
+
+    <div class="stats" style="margin-top:50px;">
+      
+      <div class="stat">
+        <h3>20+</h3>
+        <p><strong>Years of Service</strong></p>
+        <p style="font-size:14px;">Consistent contribution since 2001</p>
+      </div>
+
+      <div class="stat">
+        <h3>5+</h3>
+        <p><strong>Institutions & Centres</strong></p>
+        <p style="font-size:14px;">Education & skill hubs across regions</p>
+      </div>
+
+      <div class="stat">
+        <h3>10,000+</h3>
+        <p><strong>Youth Trained</strong></p>
+        <p style="font-size:14px;">Skill empowerment & employability</p>
+      </div>
+
+      <div class="stat">
+        <h3>Multiple</h3>
+        <p><strong>Govt. Programs</strong></p>
+        <p style="font-size:14px;">State & national level initiatives</p>
+      </div>
+
+      <div class="stat">
+        <h3>Punjab</h3>
+        <p><strong>Operational Reach</strong></p>
+        <p style="font-size:14px;">Serving urban & rural communities</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="contact" class="section alt">
+  <div class="container">
+    <h2>📞 Contact Us</h2>
+
+    <p style="text-align:center; max-width:850px; margin:auto; font-size:18px;">
+      For admissions, skill training programs, partnerships or general enquiries,
+      feel free to reach out to us. Our team will be happy to assist you.
+    </p>
+
+    <div class="cards" style="margin-top:45px;">
+      
+      <div class="card" style="text-align:center;">
+        <h3>📍 Office Address</h3>
+        <p>
+          Guru Harkrishan Rai Educational Society<br/>
+          1714, Chugh Street, Fazilka – 152123<br/>
+          Punjab, India
+        </p>
+      </div>
+
+      <div class="card" style="text-align:center;">
+        <h3>📞 Call Us</h3>
+        <p>
+          <strong>+91 98154 48848</strong><br/>
+          <strong>+91 82848 48848</strong>
+        </p>
+        <p style="font-size:14px;">(Mon – Sat | 10:00 AM – 5:00 PM)</p>
+      </div>
+
+      <div class="card" style="text-align:center;">
+        <h3>✉️ Email</h3>
+        <p>
+          <a href="mailto:rakeshbhusri@yahoo.com" style="text-decoration:none; color:var(--primary); font-weight:600;">
+            rakeshbhusri@yahoo.com
+          </a>
+ <a href="mailto:ghitifzk@gmail.com" style="text-decoration:none; color:var(--primary); font-weight:600;">
+      ghitifzk@gmail.com
+    </a>
+        </p>
+        <p style="font-size:14px;">Send us your queries anytime</p>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center; margin-top:50px;">
+      <a href="tel:9815448848" class="btn">📞 Call Now</a>
+      <a href="mailto:rakeshbhusri@yahoo.com" class="btn" style="margin-left:10px;">
+        ✉️ Send Email
+      </a>
+    </div>
+
+  </div>
+<div style="margin-top:30px;border-radius:14px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.15)">
+  <iframe 
+    src="https://www.google.com/maps?q=Guru%20Harkrishan%20Rai%20Educational%20Society%20Fazilka&output=embed"
+    width="100%" 
+    height="350" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+</div>
+</section>
+
+
+
+<footer>
+  <div class="container">
+    <p>© 2026 Guru Harkrishan Rai Educational Society, Fazilka | All Rights Reserved</p>
+  </div>
+<p style="margin-top:5px; font-size:14px; color:#f0d27a;">
+      Designed by <strong>Er. Aseem Bhusri</strong>
+    </p>
+</footer>
+<script>
+  function comingSoon(){
+    alert(
+      "🚧 Coming Soon!\n\n" +
+      "Detailed information about this institution will be available shortly.\n" +
+      "We are currently upgrading our digital platform to serve you better."
+    );
+  }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // NAV LINKS (#about, #activities, etc.)
+  //const navLinks = document.querySelectorAll('nav a[href^="#"]');
+const navLinks = document.querySelectorAll('a[href^="#"]');
+
+  // LOGO & HERO
+  const logo = document.querySelector(".main-logo");
+  const heroSection = document.querySelector(".hero");
+
+  // Nav links smooth scroll
+  navLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        e.preventDefault();
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
+  });
+
+  // Logo click → Landing / Hero section
+  if (logo && heroSection) {
+    logo.style.cursor = "pointer";
+    logo.addEventListener("click", function () {
+      heroSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  }
+
+});
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Guru Harkrishan Rai Educational Society</title>
+  <link rel="icon" type="image/png" href="society-icon.png">
+  <style>
+    :root{
+      --primary:#0b3c5d;
+      --secondary:#f4f7fb;
+      --accent:#e0a800;
+      --text:#333;
+    }
+    body{margin:0;font-family:'Segoe UI',Arial,sans-serif;color:var(--text);background:#fff;padding-top:100px;}
+    header{background:var(--primary);color:#fff;position:fixed;top:0;left:0;width:100%;z-index:999;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+    .container{width:90%;max-width:1200px;margin:auto}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+    nav a{color:#fff;text-decoration:none;font-weight:600}.main-logo {
+  height: 110px; /* slightly smaller than previous 120px for balance */
+ margin-top: -15px;       /* upar overflow */
+  margin-bottom: -24px; 
+  width: auto;
+
+  transition: transform 0.3s;
+}
+
+.main-logo:hover {
+  transform: scale(1.2) translateY(4px);
+}
+    h1{text-align:center;color:var(--primary);margin-top:0;}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:40px;}
+    .gallery-item{position:relative;overflow:hidden;border-radius:14px;cursor:pointer;transition:transform 0.3s;}
+    .gallery-item img{
+  width:100%;
+  aspect-ratio: 4 / 3;
+  height:auto;
+  object-fit:cover;
+}
+
+    .gallery-item:hover img{transform:scale(1.1);box-shadow:0 12px 28px rgba(0,0,0,0.3);}
+    .gallery-item::after{content:"View Image";position:absolute;inset:0;background:rgba(11,60,93,0.75);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;opacity:0;transition:.3s;}
+    .gallery-item:hover::after{opacity:1;}
+    footer{background:var(--primary);color:#fff;padding:15px 0;text-align:center;margin-top:50px;}
+    @media(max-width:768px){.gallery-item img{height:140px;}}
+    @media(max-width:480px){.gallery-item img{height:100px;}}
+#lightbox {
+    display:none;
+    position:fixed;
+    top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+    cursor:pointer;
+  }
+  #lightbox img {
+    max-width:90%;
+    max-height:90%;
+    border-radius:12px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.5);
+  }
+  #lightbox-close {
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:40px;
+    color:#fff;
+    cursor:pointer;
+    z-index:1001;
+}
+
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-logo {
+    height: 75px;
+    margin: 0;
+    transform: none !important;
+  }
+
+  body {
+    padding-top: 135px; /* header overlap fix */
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 16px !important;
+    padding: 0 8px;
+  }
+}
+@media (max-width: 768px) {
+  #lightbox img {
+    max-width: 95%;
+    max-height: 80%;
+  }
+
+  #lightbox-close {
+    top: 12px;
+    right: 18px;
+    font-size: 32px;
+  }
+}
+footer p {
+  padding: 0 10px;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 14px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a href="index.html">
+  <img src="logo.png" alt="GHR Logo" class="main-logo">
+</a>
+        <h2>GHR Educational Society</h2>
+      </div>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="index.html#about">ℹ️ About</a></li>
+        <li><a href="index.html#activities">🎯 Activities</a></li>
+        <li><a href="index.html#team">👥 Team</a></li>
+        <li><a href="index.html#contact">📞 Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <h1>📸 Campus Gallery</h1>
+  <p style="text-align:center; max-width:900px; margin:auto; font-size:18px;">
+    Explore the vibrant campus, classrooms, labs, and activities of Guru Harkrishan Rai Educational Society,Fazilka.
+  </p>
+
+  <div class="gallery-grid">
+    <div class="gallery-item" onclick="openLightbox('maingate.png')"><img src="maingate.png" alt="Main Gate"></div>
+    <div class="gallery-item" onclick="openLightbox('campus.jpg')"><img src="campus.jpg" alt="Campus View"></div>
+    <div class="gallery-item" onclick="openLightbox('campus2.jpg')"><img src="campus2.jpg" alt="Classroom"></div>
+    <div class="gallery-item" onclick="openLightbox('campus3.jpg')"><img src="campus3.jpg" alt="Library"></div>
+    <div class="gallery-item" onclick="openLightbox('campus4.png')"><img src="campus4.png" alt="Labs"></div>
+    <div class="gallery-item" onclick="openLightbox('block2.png')"><img src="block2.png" alt="Block 2"></div>
+    <div class="gallery-item" onclick="openLightbox('block3-1.jpg')"><img src="block3-1.jpg" alt="Block 3-1"></div>
+    <div class="gallery-item" onclick="openLightbox('ground1.jpg')"><img src="ground1.jpg" alt="Sports Ground"></div>
+    <div class="gallery-item" onclick="openLightbox('ground2.jpg')"><img src="ground2.jpg" alt="Garden"></div>
+  </div>
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" src="" alt="Full Image">
+</div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Guru Harkrishan Rai Educational Society, Fazilka | All Rights Reserved</p>
+  </div>
+</footer>
+
+<script>
+  function openLightbox(src){
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lightbox.style.display = 'flex';
+  }
+
+  function closeLightbox(){
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+  }
+
+  // Prevent click on image from closing
+  document.getElementById('lightbox-img').addEventListener('click', function(e){
+    e.stopPropagation();
+  });
+</script>
+</body>
+</html>
