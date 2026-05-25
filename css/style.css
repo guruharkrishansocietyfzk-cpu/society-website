@@ -591,6 +591,72 @@ body {
   margin-bottom: 15px;
 }
 
+/* ================= MANDATORY DISCLOSURE ================= */
+
+.documents-section{
+  background:#f8f9fc;
+}
+
+.documents-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.document-card{
+  background:#fff;
+  padding:30px 25px;
+  border-radius:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+  text-align:center;
+  transition:0.3s ease;
+}
+
+.document-card:hover{
+  transform:translateY(-8px);
+}
+
+.doc-icon{
+  font-size:48px;
+  margin-bottom:15px;
+}
+
+.document-card h3{
+  font-size:22px;
+  margin-bottom:12px;
+  color:#111;
+}
+
+.document-card p{
+  font-size:15px;
+  line-height:1.6;
+  color:#666;
+  margin-bottom:22px;
+}
+
+.doc-btn{
+  display:inline-block;
+  padding:12px 22px;
+  background:#0b57d0;
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+  transition:0.3s ease;
+}
+
+.doc-btn:hover{
+  background:#083b8a;
+}
+
+@media(max-width:768px){
+
+  .documents-grid{
+    grid-template-columns:1fr;
+  }
+
+}
 
 /* ================= GLOBAL IMAGE ================= */
 
